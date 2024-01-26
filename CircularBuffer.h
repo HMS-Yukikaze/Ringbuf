@@ -27,7 +27,7 @@ struct CircularBuffer
 	bool isEmpty();
 
 	/**
-	 * ¶ÓÁĞÖĞÓĞĞ§Êı¾İ¸öÊı.
+	 * é˜Ÿåˆ—ä¸­æœ‰æ•ˆæ•°æ®ä¸ªæ•°.
 	 *
 	 * \return
 	 */
@@ -40,12 +40,11 @@ struct CircularBuffer
 	//for test
 	//void set();
 
-	size_t cap;                  /*×î´óÈİÁ¿*/
-	size_t nodeCount;            /*Êı¾İµÄ¸öÊı*/
-	size_t totalSize;            /*ËùÓĞ½ÚµãÊı¾İÓò×Ü´óĞ¡*/
+	size_t cap;                  /*æœ€å¤§å®¹é‡*/
+	size_t nodeCount;            /*æ•°æ®çš„ä¸ªæ•°*/
+	size_t totalSize;            /*æ‰€æœ‰èŠ‚ç‚¹æ•°æ®åŸŸæ€»å¤§å°*/
 	Node* head;
 	Node* tail;
 	std::mutex mt;
-	std::condition_variable cv;
 	unsigned char* buffer;
 };
