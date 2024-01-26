@@ -45,6 +45,9 @@ size_t CircularBuffer::Size()
 
 void CircularBuffer::push(unsigned char* src, int length)
 {
+	if (length > cap) {
+		throw std::runtime_error("input data over set capacity");
+	}
 	std::unique_lock<std::mutex>lk(mt);
 	//1.未满,链表为空
 	//2.正好满
