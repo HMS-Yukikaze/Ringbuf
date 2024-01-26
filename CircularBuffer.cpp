@@ -39,7 +39,6 @@ bool CircularBuffer::isEmpty()
 
 size_t CircularBuffer::Size()
 {
-	//£¨¶ÓÎ² + Êý×é³¤¶È - ¶ÓÍ·£©% Êý×é³¤¶È
 	return nodeCount;
 }
 
@@ -49,9 +48,9 @@ void CircularBuffer::push(unsigned char* src, int length)
 		throw std::runtime_error("input data over set capacity");
 	}
 	std::unique_lock<std::mutex>lk(mt);
-	//1.Î´Âú,Á´±íÎª¿Õ
-	//2.ÕýºÃÂú
-	//3,Î´Âú£¬µ«ÊÇÈÝÁ¿²»×ãÒÔ·ÅÏÂ´Ëlength
+	//1.æœªæ»¡,é“¾è¡¨ä¸ºç©º
+	//2.æ­£å¥½æ»¡
+	//3,æœªæ»¡ï¼Œä½†æ˜¯å®¹é‡ä¸è¶³ä»¥æ”¾ä¸‹æ­¤length
 	if (isFull()||(totalSize+length)>cap) {
 		Node* temp = head;
 		head = head->next;		
